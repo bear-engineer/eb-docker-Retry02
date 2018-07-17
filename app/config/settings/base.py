@@ -17,7 +17,14 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'members.backends.SettingsBackend',
+]
 
+AUTH_USER_MODEL = 'members.User'
+ADMIN_USERNAME = 'admin'
+ADMIN_PASSWORD = 'pbkdf2_sha256$100000$vHptYYBrwIy7$zceorQcnuSvMwCK3qYnLiWhnJ6NmG7WxekuVO0ZtZx4='
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -28,6 +35,8 @@ SECRET_KEY = secrets['SECRET_KEY']
 # Application definition
 
 INSTALLED_APPS = [
+    'django_extensions',
+    'members.apps.MembersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
