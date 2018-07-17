@@ -5,8 +5,14 @@ name = "pypi"
 
 [packages]
 django = "*"
+pillow = "*"
+django-storages = "*"
+uwsgi = "*"
 
 [dev-packages]
+awsebcli = "*"
+ipython = "*"
+django-extensions = "*"
 
 [requires]
 python_version = "3.7"
