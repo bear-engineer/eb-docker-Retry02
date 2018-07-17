@@ -1,0 +1,6 @@
+-i https://pypi.org/simple
+django-storages==1.6.6
+django==2.0.7
+pillow==5.2.0
+pytz==2018.5
+uwsgi==2.0.17.1
