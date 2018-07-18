@@ -12,13 +12,14 @@ ENV             BUILD_MODE      production
 ENV             DJANGO_SETTINGS_MODULE  config.settings.${BUILD_MODE}
 
 COPY            .       /srv/project
-
+# 로그파일 기록 위한 폴더 생성
+RUN             mkdir /var/log/django
 RUN             cp -f   /srv/project/.config/${BUILD_MODE}/nginx.conf \
                         /etc/nginx/nginx.conf   && \
                 cp -f   /srv/project/.config/common/nginx_app.conf \
                         /etc/nginx/sites-available/ && \
                 rm -f   /etc/nginx/sites-enabled/* && \
-                ln -sf  /etc/nginx/sites-available/nginx_app.conf \
+                ln -sf   /etc/nginx/sites-available/nginx_app.conf \
                         /etc/nginx/sites-enabled/
 
 RUN             cp -f   /srv/project/.config/${BUILD_MODE}/supervisor_app.conf \
