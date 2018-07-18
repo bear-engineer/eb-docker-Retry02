@@ -25,5 +25,5 @@ RUN             cp -f   /srv/project/.config/${BUILD_MODE}/nginx.conf \
 RUN             cp -f   /srv/project/.config/${BUILD_MODE}/supervisor_app.conf \
                         /etc/supervisor/conf.d/
 
-EXPOSE          80
+EXPOSE          7000
 CMD             supervisord -n

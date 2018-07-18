@@ -8,15 +8,15 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRETS_DIR = os.path.join(ROOT_DIR, '.secrets')
 secrets = json.load(open(os.path.join(SECRETS_DIR, 'data.json')))
 
-STATC_ROOT = os.path.join(ROOT_DIR, '.static')
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(ROOT_DIR, '.static')
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    STATIC_DIR,
-]
+# STATICFILES_DIRS = [
+#     STATIC_DIR,
+# ]
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
